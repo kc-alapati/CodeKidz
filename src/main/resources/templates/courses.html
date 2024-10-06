@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="icon" type="image/png" href="/images/favicon.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Course List</title>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #d9184d;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 20px; /* Adjust the padding to make the header smaller */
+            max-width: 1000px; /* Adjust the max-width as needed */
+            margin: 0 auto; /* Center the header horizontally */
+            border-radius: 30px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: center; /* Center the table horizontally */
+        }
+
+        .course-table {
+            width: 100%; /* Set the table width to 100% */
+            max-width: 1000px; /* Add a maximum width for larger screens, same as header */
+            margin: 0 auto; /* Center the table horizontally */
+            border-collapse: collapse;
+        }
+
+        .course-table th,
+        .course-table td {
+            padding: 10px;
+            border: 1px solid #dddddd;
+            text-align: center;
+        }
+
+        .course-table th {
+            background-color: #000080;
+            color: #ffffff; 
+        }
+
+        .course-table tr:hover {
+            background-color: #f2f2f2;
+        }
+
+        .course-table a {
+            color: #d9184d; /* Set the default link color to blue */
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .course-table a:hover {
+            background-color:#0E429D;
+            color: #ffffff; /* Change the link color to white on hover */
+        }
+
+        .lesson-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .lesson-table td {
+            padding: 5px;
+            border: 1px solid #dddddd;
+            text-align: left;
+        }
+
+        .lesson-table {
+            display: none;
+            /* Hide the lesson table initially */
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .lesson-table {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div th:replace="navbar.html"></div>
+    <header>
+        <h1 th:text="${'COURSES AVAILABLE'}"></h1>
+    </header>
+    <main>
+        <table class="course-table">
+            <!-- Table header -->
+            <thead>
+                <tr>
+                    <th>Course ID</th>
+                    <th>Course Name</th>
+                    <th>Course Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <!-- Table body with course data -->
+            <tbody>
+                <tr th:each="course : ${courses}">
+                    <td th:text="${course.id}"></td>
+                    <td th:text="${course.name}"></td>
+                    <td th:text="${course.price}"></td>
+                    <td>
+                        <a th:href="@{'/courses/' + ${course.id} + '/lessons'}" th:text="'Show Lessons'"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

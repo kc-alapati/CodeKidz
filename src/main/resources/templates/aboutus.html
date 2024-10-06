@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>CodeKidz - About Us!</title>
+	<link rel="icon" type="image/png" href="/images/favicon.png">
+	<style>
+		html {
+			background-image: linear-gradient(to bottom right, #ffffff, #ffffff);
+		}
+
+		body {
+			font-family: Arial, sans-serif;
+			line-height: 1.6;
+			margin:8px;
+		}
+
+		header {
+			background-color: #333;
+			color: #fff;
+			text-align: center;
+			padding: 1rem;
+		}
+
+		header h1 {
+			margin: 0;
+		}
+
+		main {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 2rem;
+		}
+
+
+		.team-member {
+			text-align: left;
+		}
+
+		.team-member img {
+			width: 150px;
+			border-radius: 50%;
+			margin-bottom: 0.5rem;
+		}
+
+		.mentor img {
+			width: 150px;
+			border-radius: 50%;
+			margin-bottom: 0.5rem;
+
+
+		}
+
+		footer {
+			background-color: #333;
+			color: #fff;
+			text-align: center;
+			padding: 1rem;
+		}
+
+		footer p {
+			margin: 0;
+		}
+
+		.team-member img {
+			max-width: 600px;
+			border-radius: 10%;
+			border: 5px solid #ccc;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+			margin-bottom: 10px;
+		}
+
+		.mentor img {
+			max-width: 600px;
+			border-radius: 10%;
+			border: 5px solid #ccc;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+			margin-bottom: 10px;
+
+
+		}
+
+		.img {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+		
+		.container{
+			margin-top: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<div th:replace="navbar.html"></div>
+	<container class="container">
+	<main>
+		<section class="about">
+
+
+		</section>
+		<section class="team">
+
+
+			<div class="team-member">
+				<u>
+					<h1>
+						<p style="text-align: center">Mentor</p>
+					</h1>
+				</u>
+
+				<div class="img">
+					<img src="/images/punithsir.jpg" ;alt="Mentor">
+				</div>
+				<h3 style="text-align: center">Punith Sharma</h3>
+				<h3 style="text-align: center">"Trainers don't just teach; they inspire their students to reach for the
+					stars and beyond."</h3>
+			</div>
+			<hr>
+
+
+			<u>
+				<h2 style="text-align: center">Meet Our Team</h2>
+			</u>
+
+
+			<div class="team-member">
+				<img src="/images/krishna.jpg" ; alt="Team Member 1">
+				<h3>Krishna chaitanya</h3>
+				<h3 style="margin-top:-25%;margin-left:15%;text-align: right;">"In the realm of code, developers are the
+					architects of possibilities,<br>
+					building the foundation for a digital world"</h5>
+					<p style="text-align: right;margin-top:5%;margin-left:40%;">Backend Developer</p>
+					<br><br>
+			</div>
+			<hr>
+
+
+			<div class="team-member">
+				<img src="/images/vivek.jpg" ; style=" margin-left:680px" alt="Team Member 2">
+				<h3 style="text-align:right">Vivek sahu</h3>
+
+				<h3 style="margin-top:-25%;margin-left:10%;">"Developers are modern-day wizards,<br> wielding the power
+					of technology to shape reality"</h3>
+
+
+				<p style="text-align: center;margin-top:5%;margin-left:40%;">Backend Developer</p>
+				<br><br>
+				<hr>
+			</div>
+			<div class="team-member">
+				<img src="/images/karale.jpg" alt="Team Member 3">
+				<h3>Krishna karale</h3>
+				<h3 style="margin-top:-25%;margin-left:15%;text-align: right;">"Behind every innovative app or
+					software,<br> there's a team of developers who turned dreams into lines of code."</h3>
+
+				<p style="text-align: right;margin-top:5%;margin-left:40%;">Frontend Developer</p>
+				<br><br>
+				<hr>
+
+			</div>
+			<div class="team-member">
+				<img src="/images/naveen.jpg" ; style=" margin-left:650px" alt="Team Member 4">
+				<h3 style="text-align: right">Naveen pandey</h3>
+				<h3 style="margin-top:-25%;margin-left:5%;">"In the world of coding, developers are the poets,<br>
+					expressing logic and creativity through a language of symbols"
+
+				</h3>
+				<p style="text-align: center;margin-top:0%;margin-left:40%;">Frontend Developer</p>
+				<br><br><br><br>
+			</div>
+			<hr>
+
+
+			<div class="team-member">
+				<img src="/images/muskan.jpg" alt="Team Member 5">
+				<h3>Muskan khan</h3>
+				<h3 style="margin-top:-25%;margin-left:15%;text-align: right;">"Developers are the magicians of the
+					digital realm,<br> turning blank screens into captivating stories"</h3>
+				<p style="text-align: right;margin-top:5%;margin-left:40%;">Backend Developer</p>
+				<br><br>
+				<hr>
+
+
+			</div>
+			<div class="team-member">
+				<img src="/images/anchal.jpg" ; style=" margin-left:680px" alt="Team Member 6">
+				<h3 style="text-align: right">Anchal Jaju</h3>
+				<h3 style="margin-top:-25%;margin-left:10%;">"With a keyboard as their canvas and logic as their
+					paint,<br> developers craft masterpieces of functionality and design"</h3>
+				<br><br>
+
+				<p style="text-align: center;margin-top:-5%;margin-left:40%;">Frontend Developer</p>
+				<br><br><br>
+			</div>
+			<hr>
+			<!-- Add more team members as needed -->
+			 
+		</section>
+		</container>
+</body>
+
+</html>

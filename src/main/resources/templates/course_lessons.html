@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Course Lessons</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #d9184d;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 20px; /* Adjust the padding to make the header smaller */
+            max-width: 1000px; /* Adjust the max-width as needed */
+            margin: auto;   /* Center the header horizontally */
+            border-radius: 30px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+            display:flex;
+            justify-content:center;
+        }
+
+        .lesson-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0 auto;
+            max-width: 1000px;
+        }
+
+        .lesson-table th,
+        .lesson-table td {
+            padding: 10px;
+            border: 1px solid #dddddd;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+           
+          th,td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+           }
+           
+           .lesson-table th {
+            background-color: #000080;
+            color: #ffffff; 
+        }
+        
+       
+
+        th {
+            background-color: #f2f2f2;
+            text-align: center; /* Center the column names within the cells */
+        }
+        
+        
+        .lesson-table tr:hover {
+            background-color: #f2f2f2;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div th:replace="navbar.html"></div>
+    <header>
+       <h1 th:text="${#strings.toUpperCase(course.name) + ' LESSONS'}"></h1>
+
+    </header>
+    <main>
+        <table class="lesson-table">
+            <thead>
+                <tr>
+                    <th>Lesson ID</th>
+                    <th>Lesson Name</th>
+                    <th>Lesson Link</th>
+                    <th>Lesson Topics</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="lesson : ${course.lessons}">
+                    <td th:text="${lesson.id}"></td>
+                    <td th:text="${lesson.name}"></td>
+                    <td>
+                        <a th:href="${lesson.link}" th:text="${lesson.link}"></a>
+                    </td>
+                    <td th:text="${lesson.topics}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>

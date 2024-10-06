@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Student Home Page</title>
+	<link rel="icon" type="image/png" href="/images/favicon.png">
+
+	<style>
+		body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(255, 255, 255);
+           
+            
+        }
+        .container {
+            text-align: center;
+			margin-top: 100px;
+			padding: 20px;
+            
+        }
+        
+        
+        
+		h1 {
+			color: #343a40;
+			font-weight: bold;
+			font-size: 24px;
+			margin-bottom: 30px;
+			padding-left: 10px;
+		}
+
+		a {
+			color: #fff;
+			text-decoration: none;
+		}
+
+		.btn {
+			padding: 12px 24px;
+			font-size: 16px;
+			border: none;
+			border-radius: 8px;
+			background-color: #0E429D;
+			color: white;
+			margin: 10px;
+			cursor: pointer;
+			transition: background-color 0.3s ease, transform 0.2s ease;
+		}
+
+		.btn:hover {
+			background-color: #d9184d;
+			transform: scale(1.05);
+		}
+	</style>
+	<!-- Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+</head>
+
+
+
+<body>
+    <div th:replace="navbar.html"></div>
+  <div class="container"><h1>
+        Hello , <span th:text="${studentName}"></span>!
+    </h1>
+    <div class="d-grid gap-2">
+        <button class="btn btn-primary" type="button">
+            <a href="/purchase">Purchase Course</a>
+        </button>
+        <button class="btn btn-primary" type="button">
+            <a href="/fetchStudentCourses">My Courses</a>
+        </button>
+    </div>
+
+</body>
+
+</html>

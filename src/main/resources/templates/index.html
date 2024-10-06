@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>CodeKidz</title>
+	<link rel="icon" type="image/png" href="/images/favicon.png">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+		html {
+			height: 100%;
+			
+			background-image: linear-gradient(to bottom right, #ffffff, #ffffff);
+		}
+
+		.container1 {
+			margin-top: 30px;
+			text-align: center;
+			width: 50%;
+		}
+
+		.container1 h2 {
+			font-size: 25px;
+			font-weight: 500;
+			margin-bottom: 20px;
+			color: #c81345;
+			margin-top: 40px;
+			justify-content: center;
+
+		}
+
+		.container1 p {
+
+			font-size: 18px;
+			line-height: 1.6;
+			margin-bottom: 10px;
+			color: rgb(128, 128, 128);
+			opacity: 0.5;
+
+		}
+
+
+
+		.container {
+
+			height: 100vh;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: right;
+			/* justify-content: last baseline; */
+			background-color: #f0f1f5;
+			column-gap: 30px;
+
+		}
+
+		.container2 {
+			margin-top: 30px;
+			border-radius: 25px;
+
+			width: 38%;
+			margin-left: 60%;
+			margin-top: -450px;
+			position: sticky;
+			box-shadow: inset 20px 20px 20px #d9d9d9, inset -20px -20px 60px #ffffff;
+			color: #333
+		}
+
+
+
+		.container1 img {
+
+
+			height: 85%;
+			width: 85%;
+			border-radius: 25px 25px 25px 25px;
+		}
+
+
+
+
+
+
+		.button {
+			display: inline-block;
+			padding: 10px 20px;
+			font-size: 16px;
+			text-align: center;
+			text-decoration: none;
+			background-color: #3498db;
+			color: #ffffff;
+			border-radius: 4px;
+			transition: background-color 0.3s ease;
+		}
+
+		.button:hover {
+			background-color: #2980b9;
+		}
+
+
+		.form {
+			border-color: #333;
+			box-shadow: #333;
+			position: absolute;
+			max-width: 430px;
+			width: 100%;
+			padding: 50px;
+			border-radius: 35px;
+			background: #FFF;
+			margin-right: 5%;
+			background-color: #fff;
+			box-shadow: 0px 4px 8px rgb(159, 159, 159);
+			border-radius: 10px;
+			transition: box-shadow 0.3s, border-color 0.3s;
+		}
+
+		.form:hover {
+			box-shadow: 0px 4px 8px rgb(0, 0, 0);
+			border-color: rgb(0, 0, 0);
+			transform: scale(1.01);
+		}
+
+
+		header {
+			font-family: 'Playfair Display', serif;
+			font-size: 38px;
+			font-weight: 600;
+			color: #232836;
+			text-align: center;
+		}
+
+		form {
+			margin-top: 30px;
+		}
+
+		.form .field {
+			position: relative;
+			height: 50px;
+			width: 100%;
+			margin-top: 20px;
+			border-radius: 6px;
+		}
+
+		.field input,
+		.field button {
+			height: 100%;
+			width: 100%;
+			border: none;
+			font-size: 16px;
+			font-weight: 400;
+			border-radius: 6px;
+		}
+
+		.field input {
+			outline: none;
+			padding: 0 15px;
+			border: 1px solid#CACACA;
+		}
+
+		.field input:focus {
+			border-bottom-width: 2px;
+		}
+
+		.eye-icon {
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			transform: translateY(-50%);
+			font-size: 18px;
+			color: #8b8b8b;
+			cursor: pointer;
+			padding: 5px;
+		}
+
+		.field button {
+			color: #fff;
+			background-color: #0E429D;
+			/* Add the desired color here */
+			transition: all 0.3s ease;
+			cursor: pointer;
+		}
+
+
+		.field button:hover {
+			background-color: #d9184d;
+			;
+		}
+
+		.form-link {
+			text-align: center;
+			margin-top: 10px;
+		}
+
+		.form-link span,
+		.form-link a {
+			font-size: 14px;
+			font-weight: 400;
+			color: #232836;
+		}
+
+		.form a {
+			color: #0E429D;
+			text-decoration: none;
+		}
+
+		.form-content a:hover {
+			text-decoration: underline;
+		}
+
+		.line {
+			position: relative;
+			height: 1px;
+			width: 100%;
+			margin: 36px 0;
+			background-color: #d4d4d4;
+		}
+
+		.line::before {
+			content: 'Or';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #FFF;
+			color: #8b8b8b;
+			padding: 0 15px;
+		}
+
+		.login-heading {
+			color: #c81345;
+		}
+
+		#login {
+			width: 460px;
+			height: 50px;
+		}
+	</style>
+</head>
+
+<body>
+	<div th:replace="navbar.html"></div>
+
+	<div class="container1" >
+		<img src="/images/logo3.png" alt="CodeKidz Logo">
+
+		<h2>Welcome to CodeKidz Learning Platform</h2>
+		<div class="containertext" style="margin-left: 10%; text-align: justify; max-width: 80%;" >
+		<p>
+			At CodeKidz, we believe in the power of education to transform lives and shape the future. Our learning
+			platform is designed to nurture young minds, inspire creativity, and foster a love for learning. With a team
+			of dedicated educators and a wide range of courses, we strive to provide an enriching and engaging
+			experience for all our students.
+		</p>
+		<p>
+			Join us on this exciting journey of exploration and growth. Unlock your potential, embrace new challenges,
+			and embark on a path of endless opportunities. Let's code the future together!
+		</p>
+	</div>
+	</div>
+
+	<div class="container2">
+		<aside>
+			<div class="form login">
+
+				<div class="form-content">
+
+					<span th:if="${userSuccess}" style="color: green; font-size: large; text-align: center;">Registration success! 
+						Now login to access your Account <br> <br> </span>
+					
+					<header class="login-heading">Login</header>
+					<form action="/validate" method="post">
+
+						<div class="field input-field">
+							<input type="email" name="email" placeholder="Email" class="input"
+								pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+								title="Please enter a valid email address" required>
+						</div>
+
+						<div class="field input-field">
+							<input type="password" name="password" placeholder="Password" class="password">
+							<i class='bx bx-hide eye-icon'></i>
+						</div>
+
+						<div class="form-link">
+							<a href="#" class="forgot-pass">Forgot password?</a>
+						</div>
+
+						<div class="field button-field">
+							<button id="login">Login</button>
+						</div>
+
+					</form>
+
+					<div class="form-link">
+						<span th:if="${loginFailed}" style="color: red; font-size: large;">Incorrect credentials, please
+							try again!.</span>
+						<br>
+						<span>Don't have an account? <a th:href="@{/register}"
+								class="link signup-link">Signup</a></span>
+					</div>
+				</div>
+			</div>
+
+		</aside>
+	</div>
+</body>
+
+</html>
