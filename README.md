@@ -96,7 +96,7 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-#### 5. Open your browser and go to http://localhost:8080 to access the application.
+#### 5. Open your browser and go to http://localhost:9090 to access the application.
  
 
 ### Instructions:
